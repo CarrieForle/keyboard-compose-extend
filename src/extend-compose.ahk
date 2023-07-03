@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey >= 2
+#Requires AutoHotkey >= 2
 A_MaxHotkeysPerInterval := 150
 A_HotkeyInterval := 1000
 SetMouseDelay 1
@@ -126,6 +126,27 @@ else
 
 #InputLevel 1
 
+#SuspendExempt
+#HotIf A_IsSuspended
+CapsLock::
+{
+	if GetKeyState("CapsLock", "T")
+		SetCapsLockState "AlwaysOff"
+	else
+		SetCapsLockState "AlwaysOn"
+}
+#HotIf ; for CapsLock to be toggleabde while suspending
+RAlt::toggleSuspension
+^+sc006::
+{
+	SendEvent "{vk3c Up}{vk3d Up}{vk3e Up}"
+	SoundBeep 3000, 30
+	Reload
+	SoundBeep 4500, 30
+}
+^+sc029::ExitApp
+#SuspendExempt false
+
 #HotIf modifierHotKey == "~Shift up" && A_TickCount - timeSinceExtendPrestart <= intervalAllowedForExtendLayerActivation
 CapsLock::
 {
@@ -171,25 +192,11 @@ CapsLock & Ctrl::
 	KeyWait("CapsLock")
 }
 
-~CapsLock up::
+~*CapsLock up::
 {
 	SendEvent "{vk3c Up}{vk3d Up}{vk3e Up}"
 }
 
-#SuspendExempt
-#Hotif A_IsSuspended
-CapsLock::CapsLock ; for CapsLock to be toggleabde while suspending
-#HotIf
-RAlt::toggleSuspension
-^+sc006::
-{
-	SendEvent "{vk3c Up}{vk3d Up}{vk3e Up}"
-	SoundBeep 3000, 30
-	Reload
-	SoundBeep 4500, 30
-}
-^+sc029::ExitApp
-#SuspendExempt false
 #InputLevel 0
 
 HoldKey(key) {
