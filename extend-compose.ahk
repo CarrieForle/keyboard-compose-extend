@@ -341,8 +341,8 @@ vk3e & sc027::BackSpace
 vk3e & sc028::HoldKey "AppsKey"
 vk3e & sc028 up::Send "{blind}{AppsKey Up}"
 
-vk3e & sc02c::SendInput "+{End}{Backspace}"
-vk3e & sc02d::SendInput "+{Home}{Backspace}"
+vk3e & sc02c::SendInput "+{Home}{Backspace}"
+vk3e & sc02d::SendInput "+{End}{Backspace}"
 vk3e & sc02e::^c
 vk3e & sc02f::^v
 vk3e & sc030::Ins
