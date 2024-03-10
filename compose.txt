@@ -6,6 +6,7 @@
 
 ; Common symbol
 ='c=©
+=(c)=©
 .<=.≤
 .>=.≥
 .!=.≠
@@ -20,6 +21,7 @@
 =sus=ඞ
 =inf=∞
 ='r=®
+=(r)=®
 =ss=§
 =tm=™
 =TM=™
@@ -40,9 +42,26 @@
 =+-=±
 =*=×
 =/=÷
+=sqrt=√
+=^1=¹
+=^2=²
+=^3=³
+=^4=⁴
+=^5=⁵
+=^6=⁶
+=^7=⁷
+=^8=⁸
+=^9=⁹
+=^0=⁰
+=^+=⁺
+=^-=⁻
+.^=.⁼
+=^(=⁽
+=^)=⁾
 
 ; Common sequences
 =name=CarrieForle
+=@=@gmail.com
 =mail=carriegardevoir@gmail.com
 =github=https://github.com/
 =''site=https://github.com/CarrieForle
